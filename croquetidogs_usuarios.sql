@@ -16,27 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `registros`
+-- Table structure for table `usuarios`
 --
 
-DROP TABLE IF EXISTS `registros`;
+DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `registros` (
-  `id_registro` int NOT NULL AUTO_INCREMENT,
-  `fecha-hora de registro` varchar(20) NOT NULL,
-  `lugar` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_registro`)
+CREATE TABLE `usuarios` (
+  `id_usuario` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `apellido` varchar(100) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `password_hash` varchar(100) NOT NULL,
+  `fecha_registro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ultimo_acceso` datetime NOT NULL,
+  `activo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id_usuario`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `registros`
+-- Dumping data for table `usuarios`
 --
 
-LOCK TABLES `registros` WRITE;
-/*!40000 ALTER TABLE `registros` DISABLE KEYS */;
-/*!40000 ALTER TABLE `registros` ENABLE KEYS */;
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-19 16:50:45
+-- Dump completed on 2025-09-19 16:50:42

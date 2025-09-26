@@ -16,32 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `compras_ventas`
+-- Table structure for table `ventas`
 --
 
-DROP TABLE IF EXISTS `compras_ventas`;
+DROP TABLE IF EXISTS `ventas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `compras_ventas` (
-  `idcliente` int NOT NULL AUTO_INCREMENT,
-  `tipo` varchar(50) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `ubicacion (empresarial)` varchar(50) NOT NULL,
-  `marca (empresarial)` varchar(50) NOT NULL,
-  `idproductosVendidos(particulares)` int NOT NULL,
-  `idproductos (comprados)` int NOT NULL,
-  `idoperaciones` int NOT NULL,
-  PRIMARY KEY (`idcliente`)
+CREATE TABLE `ventas` (
+  `id_venta` int NOT NULL AUTO_INCREMENT,
+  `fecha_venta` datetime(6) NOT NULL,
+  `total` decimal(50,0) NOT NULL,
+  `estado` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_venta`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `compras_ventas`
+-- Dumping data for table `ventas`
 --
 
-LOCK TABLES `compras_ventas` WRITE;
-/*!40000 ALTER TABLE `compras_ventas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `compras_ventas` ENABLE KEYS */;
+LOCK TABLES `ventas` WRITE;
+/*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-05 23:23:37
+-- Dump completed on 2025-09-19 16:50:45

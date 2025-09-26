@@ -16,27 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `registros`
+-- Table structure for table `lotes_productos`
 --
 
-DROP TABLE IF EXISTS `registros`;
+DROP TABLE IF EXISTS `lotes_productos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `registros` (
-  `id_registro` int NOT NULL AUTO_INCREMENT,
-  `fecha-hora de registro` varchar(20) NOT NULL,
-  `lugar` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_registro`)
+CREATE TABLE `lotes_productos` (
+  `id_lote` int NOT NULL AUTO_INCREMENT,
+  `codigo_lote` int NOT NULL,
+  `fecha_fabricacion` date NOT NULL,
+  `fecha_caducidad` date NOT NULL,
+  `cantidad` int NOT NULL,
+  PRIMARY KEY (`id_lote`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `registros`
+-- Dumping data for table `lotes_productos`
 --
 
-LOCK TABLES `registros` WRITE;
-/*!40000 ALTER TABLE `registros` DISABLE KEYS */;
-/*!40000 ALTER TABLE `registros` ENABLE KEYS */;
+LOCK TABLES `lotes_productos` WRITE;
+/*!40000 ALTER TABLE `lotes_productos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lotes_productos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
